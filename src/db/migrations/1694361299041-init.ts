@@ -13,6 +13,23 @@ export class Init1694361299041 implements MigrationInterface {
     await queryRunner.query(
       `ALTER TABLE "vote" ADD CONSTRAINT "FK_fda30edfdac85a557a3d2bda388" FOREIGN KEY ("clientId") REFERENCES "client"("id") ON DELETE NO ACTION ON UPDATE NO ACTION`,
     );
+
+    await queryRunner.query(`
+      INSERT INTO "client" (
+        name
+      )
+      VALUES
+      ('john'),
+      ('dave'),
+      ('henry'),
+      ('gerrick'),
+      ('lisa'),
+      ('donovan'),
+      ('jimmy argyle'),
+      ('lester corduroy'),
+      ('Barron fancy pants'),
+      ('cleeeeeem')
+    `);
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {

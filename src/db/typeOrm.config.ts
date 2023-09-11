@@ -8,6 +8,6 @@ export const typeORMConfig: DataSourceOptions = {
   username: 'perchwell',
   password: 'perchwell',
   database: 'perchwell',
-  migrations: ['./migrations/*'],
+  migrations: [join(__dirname, 'migrations', '*.{ts,js}')],
   entities: [join(__dirname, '**', '*.entity.{ts,js}')],
 };
