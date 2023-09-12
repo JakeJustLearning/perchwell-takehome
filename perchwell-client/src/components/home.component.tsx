@@ -83,7 +83,7 @@ export const Home = () => {
           <Table
             border={"4px"}
             variant="striped"
-            width={"calc(180vh)"}
+            width={"calc(80vw)"}
             overflowY={"scroll"}
             size={"sm"}
           >

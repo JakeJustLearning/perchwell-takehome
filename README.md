@@ -29,7 +29,7 @@ This is a simple take home assignment satisfying the requirements as layed out a
 - Steps:
 
   1. make sure that you have completed the DataBase setup in the section above
-  2. nnavigate into the [server](./server/) directory
+  2. navigate into the [server](./server/) directory
   3. install npm by running in terminal
 
      ```bash
@@ -78,14 +78,16 @@ The project primarily uses the following stack and technologies:
 
 - Back End:
   - Postgresql databse and dockerized container
-  - NestJs
+  - [NestJs](https://docs.nestjs.com/)
     - server framework
-  - TypeOrm
+  - [TypeOrm](https://typeorm.io/)
     - database orm
 - Front End:
-  - Vite
+  - [Vite](https://vitejs.dev/guide/)
     - build tool for the react ui
-  - React
+  - [React](https://react.dev/)
     - front end framework
-  - ChakraUI
+  - [ChakraUI](https://chakra-ui.com/)
     - react component library
+
+Functiona
