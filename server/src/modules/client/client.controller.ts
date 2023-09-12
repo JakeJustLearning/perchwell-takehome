@@ -6,7 +6,7 @@ export class ClientController {
   constructor(private readonly clientService: ClientService) {}
 
   @Get()
-  findAll() {
-    return this.clientService.findAll();
+  async findAll() {
+    return await this.clientService.findAll();
   }
 }

@@ -3,6 +3,7 @@ import {
   Get,
   InternalServerErrorException,
   NotFoundException,
+  Param,
   Post,
 } from '@nestjs/common';
 import { ClientService } from './client.service';
@@ -11,18 +12,18 @@ import { ClientService } from './client.service';
 export class VoteController {
   constructor(private readonly clientService: ClientService) {}
 
-  @Get('([0-9]+)')
-  async countVotesByClientId(clientId: number) {
-    const client = await this.clientService.findOneByClientId(clientId);
+  @Get(':clientId')
+  async countVotesByClientId(@Param() params: any) {
+    const client = await this.clientService.findOneByClientId(params.clientId);
     if (!client) {
       throw new NotFoundException('Unable to find vote count for client');
     }
     return client.votes.length;
   }
 
-  @Post('([0-9]+)')
-  async addVoteByClientId(clientId: number) {
-    const client = await this.clientService.findOneByClientId(clientId);
+  @Post(':clientId')
+  async addVoteByClientId(@Param() params: any) {
+    const client = await this.clientService.findOneByClientId(params.clientId);
     if (!client) {
       throw new NotFoundException(`Unable to create vote for clientId`);
     }

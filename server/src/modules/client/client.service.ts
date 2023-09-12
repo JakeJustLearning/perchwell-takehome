@@ -14,7 +14,7 @@ export class ClientService {
   ) {}
 
   async findAll() {
-    return await this.clientRepository.find();
+    return await this.clientRepository.find({ order: { name: 'ASC' } });
   }
 
   async findOneByClientId(clientId: number) {
