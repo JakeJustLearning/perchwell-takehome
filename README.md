@@ -2,9 +2,16 @@
 
 This is a simple take home assignment satisfying the requirements as layed out at [here](https://you.ashbyhq.com/Perchwell/assignment/d8d36140-b3be-4155-a8ad-652ae87e6904)
 
+- [Perchwell Take Home Assignment](#perchwell-take-home-assignment)
+  - [Setting up](#setting-up)
+    - [Database](#database)
+    - [Back End](#back-end)
+    - [Front End](#front-end)
+  - [Stack](#stack)
+
 ## Setting up
 
-### DataBase
+### Database
 
 - requirements
   - docker already installed and the docker daemon locally running
@@ -17,6 +24,8 @@ This is a simple take home assignment satisfying the requirements as layed out a
      ```BASH
      docker-compose up
      ```
+
+  add the flag `-d` to the above command to run the command in background.
 
   This will provision the postgres DB in a docker container.
   This should be visible if you have the docker desktop app as a container
@@ -45,7 +54,7 @@ This is a simple take home assignment satisfying the requirements as layed out a
   5. start the server by running the following in terminal:
 
      ```bash
-     npm run start:dev
+     npm run start
      ```
 
      This will start the nestjs server and you should see this logged in terminal showing the server is running at port 3000
@@ -67,10 +76,10 @@ This is a simple take home assignment satisfying the requirements as layed out a
   3. run the following command in your terminal to start the front end at port 3030:
 
      ```bash
-     npm run dev
+     npm run start
      ```
 
-  This will start the react front end at the designated port (3030)
+  4. you can then open a browser at [localhost:3030](http://localhost:3030) to view the app.
 
 ## Stack
 

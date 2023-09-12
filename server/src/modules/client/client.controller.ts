@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, InternalServerErrorException } from '@nestjs/common';
 import { ClientService } from './client.service';
 
 @Controller('clients')
@@ -7,6 +7,13 @@ export class ClientController {
 
   @Get()
   async findAll() {
-    return await this.clientService.findAll();
+    try {
+      return await this.clientService.findAll();
+    } catch (error) {
+      console.error('internal error while fetching findall');
+      throw new InternalServerErrorException(
+        'Something went wrong please try again.',
+      );
+    }
   }
 }

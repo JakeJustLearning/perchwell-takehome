@@ -16,6 +16,7 @@ export class VoteController {
   async countVotesByClientId(@Param() params: any) {
     const client = await this.clientService.findOneByClientId(params.clientId);
     if (!client) {
+      console.error(`No client with id ${params.clientId} found.`);
       throw new NotFoundException('Unable to find vote count for client');
     }
     return client.votes.length;
@@ -25,14 +26,18 @@ export class VoteController {
   async addVoteByClientId(@Param() params: any) {
     const client = await this.clientService.findOneByClientId(params.clientId);
     if (!client) {
-      throw new NotFoundException(`Unable to create vote for clientId`);
+      console.error(
+        `Unable to create vote for clientId ${params.clientId}. No client with id found.`,
+      );
+      throw new NotFoundException(`Unable to create vote for Client`);
     }
 
     const vote = await this.clientService.addVoteToClient(client);
 
     if (!vote) {
+      console.error(`Unable to create vote for clientId ${params.clientId}`);
       throw new InternalServerErrorException(
-        `Unable to create vote for clientId`,
+        `Unable to create vote for Client`,
       );
     }
 

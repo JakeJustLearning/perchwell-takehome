@@ -1,10 +1,10 @@
 import { ChakraProvider } from "@chakra-ui/react";
-import { Home } from "./components/home.component";
+import { ClientTable } from "./components/ClientTable.component";
 
 function App() {
   return (
     <ChakraProvider>
-      <Home />
+      <ClientTable />
     </ChakraProvider>
   );
 }
