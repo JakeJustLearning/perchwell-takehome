@@ -49,7 +49,7 @@ export const ClientTable = () => {
                   Client
                 </Th>
                 <Th color={"white"} fontSize={"2xl"}>
-                  Num Requests
+                  Number of Votes
                 </Th>
               </Tr>
             </Thead>
